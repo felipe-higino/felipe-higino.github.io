@@ -1,0 +1,67 @@
+body{
+    display: flex;
+    justify-content: center;
+    
+    background-color: rgb(236, 236, 236);
+    font-family: sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    
+    max-width: 2480px;
+    max-height: 3508px;
+
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 5px rgba(4, 22, 31, 0.116);
+}
+
+h1{
+    color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+h3{
+    color: rgb(54, 54, 54);
+    margin: 0px;
+}
+
+p{
+    color:rgb(138, 138, 138);
+    margin: 0px;
+}
+
+a{
+    justify-self: end;
+}
+.box{
+    border: 30px rgba(251, 255, 0, 0) solid;
+    height: 100;
+    width: 100;
+    /* margin: 30px; */
+}
+
+.vertical-line{
+    border-left: 1px solid rgb(192, 192, 192);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.fa, .fas {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+.envelope{
+    color: rgb(218, 143, 45);
+}
+
+.fab, .fas{
+    display: inline-block;
+    color: rgb(65, 65, 65);
+    font-size: 30px;
+}
