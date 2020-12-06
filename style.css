@@ -22,7 +22,10 @@ body{
 
 h1{
     color: rgb(0, 0, 0);
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(189, 189, 189);
+
 }
 
 h3{
@@ -35,14 +38,34 @@ p{
     margin: 0px;
 }
 
-a{
-    justify-self: end;
+ul{
+    list-style: none;
+    padding: 0px;
+    display: inline;
 }
+
+li{
+    display: flex;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    align-items: center;
+    justify-content: space-between;
+}
+
+a{
+    color: rgb(76, 118, 216);
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
 .box{
-    border: 30px rgba(251, 255, 0, 0) solid;
     height: 100;
     width: 100;
-    /* margin: 30px; */
+    margin: 30px 40px;
 }
 
 .vertical-line{
@@ -51,17 +74,34 @@ a{
     margin-bottom: 30px;
 }
 
-.fa, .fas {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-}
-
 .envelope{
     color: rgb(218, 143, 45);
 }
 
+.photo{
+    display: flex;
+    justify-content: center;
+}
+
+.photo img{
+    height: 100px;
+    width: auto;
+    border-radius: 1000px;
+}
+
+.center-text{
+    text-align: center;
+    margin-bottom: 0px;
+}
+
 .fab, .fas{
     display: inline-block;
+    margin: 5px;
     color: rgb(65, 65, 65);
     font-size: 30px;
+}
+
+.light-text{
+    color:rgb(138, 138, 138);
+    border: 0px;
 }
