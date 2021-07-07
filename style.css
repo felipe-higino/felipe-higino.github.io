@@ -2,7 +2,7 @@ body{
     display: flex;
     justify-content: center;
     
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(187, 187, 187);
     font-family: sans-serif;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -34,17 +34,21 @@ h3{
 }
 
 p{
-    color:rgb(138, 138, 138);
+    color:rgb(56, 56, 56);
     margin: 0px;
 }
 
-ul{
+.ident{
+    text-indent: 3ch;
+}
+
+.div-list{
     list-style: none;
     padding: 0px;
     display: inline;
 }
 
-li{
+.div-list{
     display: flex;
     border-bottom: 1px solid rgb(0, 0, 0);
     align-items: center;
@@ -70,6 +74,12 @@ a:hover{
 
 .vertical-line{
     border-left: 1px solid rgb(192, 192, 192);
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.horizontal-line{
+    border-bottom: 1px solid rgb(192, 192, 192);
     margin-top: 30px;
     margin-bottom: 30px;
 }
