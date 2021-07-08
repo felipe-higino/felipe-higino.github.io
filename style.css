@@ -115,3 +115,12 @@ a:hover{
     color:rgb(138, 138, 138);
     border: 0px;
 }
+
+.light-text2{
+    color:rgb(97, 97, 97);
+    border: 0px;
+}
+
+li{
+    margin: 0.3rem;
+}
