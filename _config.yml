@@ -39,6 +39,11 @@ highlighter: rouge
 markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
+  auto_ids: true
+  syntax_highlighter: rouge
+
+kramdown:
+  input: GFM
 
 plugins:
   - jekyll-paginate

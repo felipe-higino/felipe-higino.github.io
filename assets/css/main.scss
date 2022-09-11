@@ -5,6 +5,9 @@
  *  Licensed under MIT
 */
 
+// @import "sass-code-highlight-master/monokai";
+@import "sass-code-highlight/onedark";
+
 :root {
   /* with profile img, 2.3rem, otherwise 3rem suits. */
   --side-nav-brand-text-font-size: 2.3rem;
