@@ -1,3 +1,25 @@
+<!-- default header -->
+---
+lng_pair: id_asmdefs1
+title: Unity e Assembly Definitions
+# author: Felipe Higino
+category: Unity
+tags: [Unity, Tools, Editor]
+img: ":id_asmdefs1/asmdef-asmref-thumb.png"
+date: 2022-09-10 00:24:44 +0000
+#comments_disable: true
+
+# seo
+#meta_modify_date: 2022-02-10 08:11:06 +0900
+#meta_description: ""
+
+#image_viewer_on: true
+#image_lazy_loader_on: true
+#on_site_search_exclude: true
+#search_engine_exclude: true
+#published: false
+---
+
 [] commentary support
 [x] last published posts history
 [x] sitemap menu
@@ -27,12 +49,12 @@ TODO
 [x] mudar contatos
 [x] add post default
 [x] ajustar tags
-[] add sessão de comentários
+[x] SEO
+[x] syntaxis highlight colorida
+[] bug home click felipe name
+[] blog colors
 [] mudar fontes
-[] SEO
 [] tradução dos meses
-[] syntaxis highlight colorida
-[][2022-09-11 13:00:15] ERROR `/tabs/blog/assets/posts/2022-09-09-why-assembly-definitions-in-unity/thumbnail.png' not found.
 
 
 features
