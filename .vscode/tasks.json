@@ -19,9 +19,9 @@
             "command": "bundle install",
         },
         {
-            "label": "Run Jekyll Live Reload",
+            "label": "Run Jekyll Incremental",
             "type": "shell",
-            "command": "bundle exec jekyll serve -- livereload --incremental",
+            "command": "bundle exec jekyll serve --incremental",
         },
     ]
 }
