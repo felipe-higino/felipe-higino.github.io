@@ -6,20 +6,20 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", init);
-    console.log("{{ page.lng_pair }}");
+    // console.log("{{ page.lng_pair }}");
     function init(){
-        let script = document.createElement("script");
+        let item = document.createElement('script');
 
-        script.setAttribute("src", "https://utteranc.es/client.js")
-        script.setAttribute("repo", "felipe-higino/felipe-higino.github.io")
-        script.setAttribute("label", "COMMENTARY")
-        script.setAttribute("theme", getTheme()) 
-        script.setAttribute("crossorigin", "anonymous") 
-        script.setAttribute("issue-term", "{{ page.lng_pair }}")
-        script.setAttribute("async", "")
+        item.setAttribute("src", "https://utteranc.es/client.js")
+        item.setAttribute("repo", "felipe-higino/felipe-higino.github.io")
+        item.setAttribute("label", "COMMENTARY")
+        item.setAttribute("theme", getTheme()) 
+        item.setAttribute("crossorigin", "anonymous") 
+        item.setAttribute("issue-term", "{{ page.lng_pair }}")
+        item.setAttribute("async", "")
 
         var utterancesRoot = document.getElementById("utterances-script");
-        utterancesRoot.appendChild(script)
+        utterancesRoot.appendChild(item)
     }
 
     function getTheme(){
