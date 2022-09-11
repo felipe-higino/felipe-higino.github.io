@@ -20,7 +20,7 @@ date: 2022-09-10 00:24:44 +0000
 #published: false
 ---
 
-[] commentary support
+[x] commentary support
 [x] last published posts history
 [x] sitemap menu
 [x] photo and brief docked sided (mobile responsiveness)
@@ -51,6 +51,9 @@ TODO
 [x] ajustar tags
 [x] SEO
 [x] syntaxis highlight colorida
+
+[x] theme-reactive utterances
+[x] language-agnostic utterances comment session
 
 [] blog colors
 [] mudar fontes

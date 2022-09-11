@@ -1,0 +1,48 @@
+ <!-- {% if site.data.conf.main.color_scheme_dark == false %}
+    {% assign theme = "github-light" %}
+{% else %}
+    {% assign theme = "github-dark" %}
+{% endif %} -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", init);
+    console.log("{{ page.lng_pair }}");
+    function init(){
+        let script = document.createElement("script");
+
+        script.setAttribute("src", "https://utteranc.es/client.js")
+        script.setAttribute("repo", "felipe-higino/felipe-higino.github.io")
+        script.setAttribute("label", "COMMENTARY")
+        script.setAttribute("theme", getTheme()) 
+        script.setAttribute("crossorigin", "anonymous") 
+        script.setAttribute("issue-term", "{{ page.lng_pair }}")
+        script.setAttribute("async", "")
+
+        var utterancesRoot = document.getElementById("utterances-script");
+        utterancesRoot.appendChild(script)
+    }
+
+    function getTheme(){
+        if(document.body.attributes['data-color-scheme'].value == 'dark')
+            return 'github-dark'
+        else
+            return 'github-light'
+    }
+
+    function themeReloader() {
+        // console.log(document.body.attributes['data-color-scheme'].value);
+
+        let theme = getTheme()
+        const message = {
+            type: 'set-theme',
+            theme: theme
+        };
+        var utterances = document.querySelector('iframe');
+        utterances.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+
+    const color_scheme_observer = new MutationObserver(themeReloader);
+    color_scheme_observer.observe(document.body, {attributeFilter: ["data-color-scheme"]});
+</script>
+
+<div id="utterances-script"></div>
