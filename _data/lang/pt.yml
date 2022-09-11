@@ -5,38 +5,38 @@ lng:
   # specifically needed for open-graph meta og:locale. if open_graph or html_lng_with_country_code not enabled in _data/conf/main.yml, it's not necessary.
   # For html tags, you can enable or disable using html_lng_with_country_code defined in _data/conf/main.yml
   # based on ISO_3166-1 https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-  country: Brazil
+  country: Brasil
   switch_title: Pt
   offer:
     title: Idioma
     msg_page: Veja essa página em Português.
     # if page translation is not available, use this.
-    msg_site: To English home page
+    msg_site: Ver em Português
 
 date:
   long: "%b %-d, %Y"
   day: "%d"
   year: "%Y"
-  months: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+  months: [Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
 
 not_found:
-  header: Page not found
-  line1: The page you requested could not be found.
-  line2: Try menu, or site search if available.
+  header: Página não encontrada
+  line1: A página requisitada não pôde ser encontrada.
+  line2: Use o menu ou a caixa de pesquisa.
 
-no_translation_tooltip: No Translation
+no_translation_tooltip: Sem Tradução
 
 navigation:
-  contact_header: Contact
+  contact_header: Contato
 
-color_scheme_switch_tooltip: Color scheme
+color_scheme_switch_tooltip: Cores
 
 search:
-  placeholder: Search
-  noResultText: No results found.
+  placeholder: Buscar
+  noResultText: Sem resultados.
 
 image_viewer:
-  load_error: The image could not be loaded.
+  load_error: A imagem não pôde ser carregada.
 
 copyright:
   additional_text: " All rights reserved."
@@ -59,40 +59,40 @@ not-found:
 post:
   read_time:
     unit: " min"
-    text: " read"
+    text: " leitura"
     # c for char w for word
-    word_char: w
+    word_char: p
     # char or words per minute
     per_minute: 200
   pager_buttons:
-    older_post: "← Older Post"
-    newer_post: "Newer Post →"
-    first_post: First
-    last_post: Last
+    older_post: "← Mais Antigo"
+    newer_post: "Mais Novo →"
+    first_post: Primeiro
+    last_post: Último
   comments:
-    disqus:
-      count_title: Comments
-      noscript: Please enable JavaScript to view the Comments.
-      click_to_load: "Load Comments"
-      consent:
-        title: Comments (Disqus.com)
-        text: >
-          Comment feature is hosted by a third party. By showing the external content you accept the $terms and $privacy_policy of disqus.com.
-          <br>If you prefer to opt out of targeted advertising, open $settings_link and click "opt-out" button and close. Return here and load comments.
-        terms_link_text: Terms of Service
-        privacy_link_text: Privacy Policy
-        settings_link_text: this link
-        button:
-          load_once: Show only this time
-          load_and_do_not_ask_again: Always show
+    # disqus:
+    #   count_title: Comments
+    #   noscript: Please enable JavaScript to view the Comments.
+    #   click_to_load: "Load Comments"
+    #   consent:
+    #     title: Comments (Disqus.com)
+    #     text: >
+    #       Comment feature is hosted by a third party. By showing the external content you accept the $terms and $privacy_policy of disqus.com.
+    #       <br>If you prefer to opt out of targeted advertising, open $settings_link and click "opt-out" button and close. Return here and load comments.
+    #     terms_link_text: Terms of Service
+    #     privacy_link_text: Privacy Policy
+    #     settings_link_text: this link
+    #     button:
+    #       load_once: Show only this time
+    #       load_and_do_not_ask_again: Always show
   table_of_contents:
-    heading: Contents
+    heading: Conteúdo
     tooltip:
-      move: Drag to move
-      close: Close
+      move: Arraste para mover
+      close: Fechar
   share:
-    heading: Share on
-    link_copied: Link copied!
+    heading: Compartilhar
+    link_copied: Copiado!
     tooltip:
       # keys need to match with _data/share.yml
       twitter: Twitter
@@ -100,7 +100,7 @@ post:
       telegram: Telegram
       linkedin: LinkedIn
       email: Email
-      copy_link: Copy link
+      copy_link: Copiar link
 
 # for post-list layout
 post-list:
@@ -108,30 +108,30 @@ post-list:
   button_name: Blog
   upside_down_tabs:
     tab:
-      all: All
-      categories: Categories
+      all: Todos
+      categories: Categorias
       tags: Tags
-      years: Years
-      clear: Clear
-      close: Close
+      years: Anos
+      clear: Limpar
+      close: Fechar
       tooltip:
-        clear: Clear
-        close: Close
+        clear: Limpar
+        close: Fechar
     msg:
       property_list:
         # keys need to match with /query/post-query.json
         tags: Tag
-        category: Category
-        year: Year
+        category: Categoria
+        year: Ano
       # you can use these wildcards, {property} {value} {thumb}
       resultFoundTitleFormat: "{property} : {thumb}"
 
 # for home layout
-home:
-  title: Welcome
-  button_name: Home
-  new_posts_title: New Articles
-  new_posts_show_more_button: View More ...
+# home:
+#   title: Boas vindas
+#   button_name: Home
+#   new_posts_title: New Articles
+#   new_posts_show_more_button: View More ...
 
 # for archives layout
 archives:
@@ -140,86 +140,86 @@ archives:
   page_header: Archive
 
 # for about layout
-about:
-  title: About
-  button_name: About
-  email_title: email
+# about:
+#   title: About
+#   button_name: About
+#   email_title: email
 
 # for links layout
-links:
-  title: Links
-  button_name: Links
-  link_text: Web site
-  info_text: Info
+# links:
+#   title: Links
+#   button_name: Links
+#   link_text: Web site
+#   info_text: Info
 
 # for projects layout
-projects:
-  title: Projects
-  button_name: Projectss
-  read_more_text: Read more
-  read_less_text: Read less
+# projects:
+#   title: Projects
+#   button_name: Projectss
+#   read_more_text: Read more
+#   read_less_text: Read less
 
 # for privacy-policy layout
 privacy-policy:
-  title: &privacy_policy_title Privacy policy
+  title: &privacy_policy_title Política de privacidade
 
 # constants to be replaced for
 constants:
-  greetings: Hello
-  welcome: Welcome
-  sample: Sample
+  greetings: Olá
+  welcome: Boas vindas
+  sample: Programador, Game Dev. Unity, Unreal e Godot. Foco em arquitetura de jogos, mecânicas e ferramentas
 
 # for cookie consent
 cookie_consent:
   privacy_policy_link_text: *privacy_policy_title
-  side_nav_setting_button_tooltip: &cookie_settings Cookie settings
+  side_nav_setting_button_tooltip: &cookie_settings Configurar Cookies
   panel_bar:
     msg: >
-      This website uses cookies to optimize site functionality.
-      It will be activated with your approval.
-    privacy_msg: Check $privacy_link.
+      Este site usa cookies para otimizar funcionalidades do site.
+      Serão ativados com a sua aprovação.
+    privacy_msg: Checar $privacy_link.
     buttons:
-      accept: &accept_button Allow all
-      settings: Customize
-      deny: &deny_button Deny
+      accept: &accept_button Permitir todos
+      settings: Customizar
+      deny: &deny_button Negar
   panel_settings:
     title: *cookie_settings
     msg: >
-      This website uses cookies to optimize site functionality.
-      It will be activated with your approval. Please click each item below for cookie policy.
-    privacy_msg: Check $privacy_link.
+      Este site usa cookies para otimizar funcionalidades do site.
+      Serão ativados com a sua aprovação. Por favor, selecione os itens desejados.
+    privacy_msg: Checar $privacy_link.
     buttons:
       accept: *accept_button
-      save: Allow selection
+      save: Habilitar seleção
       deny: *deny_button
-    always_active: Always active
+    always_active: Sempre ativo
     consent_types:
       necessary:
-        title: Strictly necessary cookies
+        title: Estritamente necessários
         info: >
-          These cookies are essential for the website function and cannot be disable.
-          They are usually set when site function like color scheme etc. is changed.
-          These cookies do not store any personally identifiable information.
+          Esses cookies são essenciais para o funcionamento do site e não podem ser desativados.
+          Eles geralmente são definidos quando a função do site, como esquema de cores, etc., é alterada.
+          Esses cookies não armazenam nenhuma informação de identificação pessoal.
           $gtag_info
       analytics:
-        title: Performance cookies #Performance and analytics cookies
+        title: Cookies de Performance #Performance and analytics cookies
         info: $gtag_info
       preferences:
-        title: Functionality cookies
+        title: Cookies de Functionalidade
         info: $gtag_info
       advertising:
-        title: Targeting and advertising cookies
+        title: Cookies de segmentação e publicidade
         info: $gtag_info
     gtag_info:
       # from https://support.google.com/tagmanager/answer/10718549#consent-types
       ad_storage: >
-        Enables storage (such as cookies) related to advertising.
+        Permite o armazenamento (como cookies) relacionado à publicidade.
       analytics_storage: >
-        Enables storage (such as cookies) related to analytics e.g. visit duration.
+        Permite o armazenamento (como cookies) relacionado a análises, por exemplo. duração da visita.
       functionality_storage: >
-        Enables storage that supports the functionality of the website or app e.g. language settings.
+        Ativa o armazenamento compatível com a funcionalidade do site ou aplicativo, por exemplo. opções de linguagem.
       personalization_storage: >
-        Enables storage related to personalization e.g. video recommendations.
+        Permite o armazenamento relacionado à personalização, por exemplo. recomendações de vídeo.
       security_storage: >
-        Enables storage related to security such as authentication functionality,
-        fraud prevention, and other user protection.
+        Permite armazenamento relacionado à segurança, como funcionalidade de autenticação,
+        prevenção de fraudes e outras proteções do usuário.

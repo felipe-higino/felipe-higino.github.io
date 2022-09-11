@@ -181,18 +181,18 @@ side_nav_close_limit: 767px
 # button order is linked to key(layout name)
 # keys need to match with "_layouts"
 side_and_top_nav_buttons:
-  - home:
-    icon: "fa fa-home"
+  # - home:
+  #   icon: "fa fa-home"
   - post-list:
     icon: "fa fa-pencil-square-o"
   - archives:
     icon: "fa fa-archive"
-  - projects:
-    icon: "fa fa-cog"
-  - links:
-    icon: "fa fa-link"
-  - about:
-    icon: "fa fa-user-o"
+  # - projects:
+  #   icon: "fa fa-cog"
+  # - links:
+  #   icon: "fa fa-link"
+  # - about:
+  #   icon: "fa fa-user-o"
 
 # side nav toggle feature
 # when side nav is not visible and if you click top nav toggle button, side nav slides from left to right (disables top nav buttons)
@@ -209,7 +209,7 @@ top_nav_brand_text_enable: true
 
 # set profile image
 # comment to disable the profile image
-side_nav_profile_img_path: /assets/img/posts/post_pic1.jpg
+side_nav_profile_img_path: /assets/img/profile/felipe-higino.jpg
 
 # this adds hover effect to bottom buttons
 side_nav_bottom_buttons_hover_effect: "hover-effect"
@@ -280,8 +280,8 @@ meta:
   schema_markup_post: true
   schema_markup_post_add_postbody: true
   schema_markup_logo_img: /assets/img/favicons/apple-touch-icon.png
-  schema_markup_about_img: /assets/img/about/about.jpg
-  schema_markup_default_meta_img: /assets/img/about/about.jpg
+  # schema_markup_about_img: /assets/img/about/about.jpg
+  # schema_markup_default_meta_img: /assets/img/about/about.jpg
   mobile_app: true
   android_mobile_app: true
   ios_mobile_app: true
