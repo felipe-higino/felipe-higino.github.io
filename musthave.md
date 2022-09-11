@@ -51,10 +51,13 @@ TODO
 [x] ajustar tags
 [x] SEO
 [x] syntaxis highlight colorida
-[] bug home click felipe name
+
 [] blog colors
 [] mudar fontes
+
+bugfixes
 [] tradução dos meses
+[x] bug home click felipe name
 
 
 features
