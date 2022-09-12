@@ -1,11 +1,4 @@
- <!-- {% if site.data.conf.main.color_scheme_dark == false %}
-    {% assign theme = "github-light" %}
-{% else %}
-    {% assign theme = "github-dark" %}
-{% endif %} -->
-
 <script>
-    // console.log("{{ page.lng_pair }}");
     function getTheme(){
         if(document.body.attributes['data-color-scheme'].value == 'dark')
         return 'github-dark'
@@ -14,8 +7,6 @@
     }
 
     function themeReloader() {
-        // console.log(document.body.attributes['data-color-scheme'].value);
-
         let theme = getTheme()
         const message = {
             type: 'set-theme',
@@ -24,26 +15,27 @@
         var utterances = document.querySelector('iframe');
         utterances.contentWindow.postMessage(message, 'https://utteranc.es');
     }
-    
-    function init(){
-        let item = document.createElement('script');
-
-        item.setAttribute("src", "https://utteranc.es/client.js")
-        item.setAttribute("repo", "felipe-higino/felipe-higino.github.io")
-        item.setAttribute("label", "COMMENTARY")
-        item.setAttribute("theme", getTheme()) 
-        item.setAttribute("crossorigin", "anonymous") 
-        item.setAttribute("issue-term", "{{ page.lng_pair }}")
-        item.setAttribute("async", "")
-
-        var utterancesRoot = document.getElementById("utterances-script");
-        utterancesRoot.appendChild(item)
-    }
 
     const color_scheme_observer = new MutationObserver(themeReloader);
     color_scheme_observer.observe(document.body, {attributeFilter: ["data-color-scheme"]});
+    setup()
 
-    document.addEventListener("DOMContentLoaded", init);
+    function setup() {
+        document.addEventListener("DOMContentLoaded", () => {
+            let item = document.createElement('script');
+
+            item.setAttribute("src", "https://utteranc.es/client.js")
+            item.setAttribute("repo", "felipe-higino/felipe-higino.github.io")
+            item.setAttribute("label", "COMMENTARY")
+            item.setAttribute("theme", getTheme()) 
+            item.setAttribute("crossorigin", "anonymous") 
+            item.setAttribute("issue-term", "{{ page.lng_pair }}")
+            item.setAttribute("async", "")
+
+            var utterancesRoot = document.getElementById("utterances-script");
+            utterancesRoot.appendChild(item)
+        });
+    }
 </script>
 
 <div id="utterances-script"></div>
