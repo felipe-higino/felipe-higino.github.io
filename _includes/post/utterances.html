@@ -1,9 +1,11 @@
 <script>
     function getTheme(){
-        if(document.body.attributes['data-color-scheme'].value == 'dark')
-        return 'github-dark'
-        else
-        return 'github-light'
+        if(document.body.attributes['data-color-scheme'].value == 'dark'){
+            return 'github-dark'
+        }
+        else{
+            return 'github-light'
+        }
     }
 
     function themeReloader() {
@@ -12,7 +14,7 @@
             type: 'set-theme',
             theme: theme
         };
-        var utterances = document.querySelector('iframe');
+        let utterances = document.querySelector('iframe');
         utterances.contentWindow.postMessage(message, 'https://utteranc.es');
     }
 
@@ -32,7 +34,7 @@
             item.setAttribute("issue-term", "{{ page.lng_pair }}")
             item.setAttribute("async", "")
 
-            var utterancesRoot = document.getElementById("utterances-script");
+            let utterancesRoot = document.getElementById("utterances-script");
             utterancesRoot.appendChild(item)
         });
     }
