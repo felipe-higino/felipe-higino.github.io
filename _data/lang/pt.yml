@@ -6,7 +6,7 @@ lng:
   # For html tags, you can enable or disable using html_lng_with_country_code defined in _data/conf/main.yml
   # based on ISO_3166-1 https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
   country: Brasil
-  switch_title: Pt
+  switch_title: Pt-BR
   offer:
     title: Idioma
     msg_page: Veja essa página em Português.
@@ -167,7 +167,7 @@ privacy-policy:
 constants:
   greetings: Olá
   welcome: Boas vindas
-  sample: Programador, Game Dev. Unity, Unreal e Godot. Foco em arquitetura de jogos, mecânicas e ferramentas
+  sample: Programador, Game Dev. Unity, Unreal e Godot. Foco em arquitetura de jogos, mecânicas e ferramentas.
 
 # for cookie consent
 cookie_consent:

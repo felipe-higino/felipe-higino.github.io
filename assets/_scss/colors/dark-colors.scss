@@ -8,11 +8,13 @@
 
 // dark color scheme definitions
 $brand-color-dark: #71b2ff;
-$main-background-dark: #191919;
+$main-background-dark: #141414;
 $button-color-dark: #666;
-$menu-background-dark: #252525;
-$header-color-dark: #c0c0c0;
-$container-background-dark: #2a2a2a;
+$menu-background-dark-gradient: radial-gradient(circle, #242424 0%, #1d1f27 100%);
+$menu-background-dark: #242424;
+$header-color-dark: #e3e3e3;
+
+$container-background-dark: #2c2f34;
 $hr-color-dark: #333;
 $anchor-text-color-dark: #3389de;
 
@@ -21,7 +23,7 @@ $anchor-text-color-dark: #3389de;
 %body-main-styles-colors-dark {
   --body-anchor-text-color: #{$anchor-text-color-dark};
   --body-anchor-hover-text-color: #2f6597;
-  --body-text-color: #b0b0b0;
+  --body-text-color: #f2f2f2;
   --body-header-text-color: #{$header-color-dark};
   --body-background-color: #{$main-background-dark};
   --body-hr-color: #{$hr-color-dark};
@@ -84,7 +86,8 @@ $anchor-text-color-dark: #3389de;
   --side-top-nav-brand-text-color: #{$brand-color-dark};
   --side-top-nav-brand-hover-text-color: #{$header-color-dark};
   --side-top-nav-background-color: #{$menu-background-dark};
-  --side-nav-sub-title-text-color: #919191;
+  --side-top-nav-background-color-gradient: #{$menu-background-dark-gradient};
+-sub-title-text-color: #919191;
   --side-nav-copyright-text-color: #{$button-color-dark};
   --side-nav-right-border-color: #{$hr-color-dark};
 }

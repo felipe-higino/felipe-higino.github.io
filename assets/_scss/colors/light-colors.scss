@@ -10,8 +10,10 @@
 $brand-color-light: #416289;
 $main-background-light: #efefef;
 $button-color-light: #a19e9e;
+// $menu-background-light-gradient: #f9f9f9;
+$menu-background-light-gradient: radial-gradient(circle, #f8fafb 0%, #ffffff 100%);
 $menu-background-light: #f9f9f9;
-$header-color-light: #5f5e5e;
+$header-color-light: #060606;
 $container-background-light: #fff;
 $hr-color-light: #eee;
 $anchor-text-color-light: #3389de;
@@ -21,7 +23,7 @@ $anchor-text-color-light: #3389de;
 %body-main-styles-colors-light {
   --body-anchor-text-color: #{$anchor-text-color-light};
   --body-anchor-hover-text-color: #2f6597;
-  --body-text-color: #6a6a6a;
+  --body-text-color: #060606;
   --body-header-text-color: #{$header-color-light};
   --body-background-color: #{$main-background-light};
   --body-hr-color: #{$hr-color-light};
@@ -78,7 +80,8 @@ $anchor-text-color-light: #3389de;
   --side-top-nav-brand-text-color: #{$brand-color-light};
   --side-top-nav-brand-hover-text-color: #{$header-color-light};
   --side-top-nav-background-color: #{$menu-background-light};
-  --side-nav-sub-title-text-color: #6e6e6e;
+  --side-top-nav-background-color-gradient: #{$menu-background-light-gradient};
+  --side-nav-sub-title-text-color: #a1a1a1;
   --side-nav-copyright-text-color: #{$button-color-light};
   --side-nav-right-border-color: #{$hr-color-light};
 }
@@ -187,6 +190,7 @@ $anchor-text-color-light: #3389de;
   --thumbnail-shadow: 0 1px 2px 0 #0102031a;
   --thumbnail-hover-shadow: 0 7px 30px -8px #0102034d;
 }
+
 // post-list/upside-down-tabs
 %upside-down-tabs-colors-light {
   --tabs-border-color: #bfbfbf;

@@ -65,3 +65,5 @@ bugfixes
 
 features
 ![such a lovely place](:post_pic1.jpg){:data-align="center"}
+
+radial-gradient(circle, #242424 0%, #1d1f27 100%)
