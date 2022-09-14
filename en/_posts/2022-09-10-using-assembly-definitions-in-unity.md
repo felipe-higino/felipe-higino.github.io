@@ -1,23 +1,23 @@
 ---
 lng_pair: id_asmdefs1
-title: Unity e Assembly Definitions
+title: Using Assembly Definitions in Unity
 category: Unity
-tags: [Unity, Tools, Editor]
+tags: [Unity, Tools, Architecture]
 img: ":id_asmdefs1/asmdef-asmref-thumb.png"
 date: 2022-09-10 00:24:44 +0000
 ---
 
-Por quê você deveria usar `Assembly Definitions` no seu projeto Unity? E por que você NÃO deveria?
+Why you should use `Assembly Definitions` in your next Unity project? And why you shouldn't? 
 
-Para quem não tem tempo de ler tudo (infelizmente 🙁), aqui vai um resumo:
+For the ones who don't have enough time to read (sadly 🙁), here is the key answers:
 
 ## TL;DR
 
 ### Why
 - guarantees project features granularity
 - better dependency management (better code architecture)
-- better testability (unit tests / `test framework` integration)
-- reduce compile times (exponentially increases iteration times)
+- better testability (unit tests integration)
+- reduce compile times (exponentially decreases iteration times)
 
 ### Why not
 - overusing can increase runtime memory usage
