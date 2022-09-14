@@ -9,7 +9,8 @@ layout: default
 {%- assign lng = get_lng -%}
 {%- include post_common/post-main.html post = page -%}
 
-{% include post/utterances.html %}
+<!-- {% include post/utterances.html %} -->
+{% include post/giscuss.html %}
 
 {%-comment-%} Pagination {%-endcomment-%}
 {% if site.posts.size > 1 -%}

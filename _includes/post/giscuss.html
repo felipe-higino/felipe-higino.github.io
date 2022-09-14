@@ -1,0 +1,64 @@
+<script>
+    function getTheme(){
+        if(document.body.attributes['data-color-scheme'].value == 'dark'){
+            return 'dark_dimmed';
+        }
+        else{
+            return 'light';
+        }
+    }
+
+    function getLang(){
+        let HTMLlang = document.documentElement.lang;
+        if(HTMLlang == 'en-US'){
+            return 'en';
+        }else 
+        if (HTMLlang == 'pt-Brasil'){
+            return 'pt';
+        }
+    }
+
+    function themeReloader() {
+        let theme = getTheme();
+        const message = {
+            setConfig: {
+                theme: theme
+            }
+        };
+        let giscuss = document.querySelector('iframe.giscus-frame');
+        giscuss.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    }
+
+    const color_scheme_observer = new MutationObserver(themeReloader);
+    color_scheme_observer.observe(document.body, {attributeFilter: ["data-color-scheme"]});
+
+    setup();
+
+    function setup() {
+        document.addEventListener("DOMContentLoaded", () => {
+            let item = document.createElement('script');
+
+            item.setAttribute('src', 'https://giscus.app/client.js');
+            item.setAttribute('data-repo', 'felipe-higino/felipe-higino.github.io');
+            item.setAttribute('data-repo-id', 'R_kgDOH-Wp9w');
+            item.setAttribute('data-category', 'commentary');
+            item.setAttribute('data-category-id', 'DIC_kwDOH-Wp984CRbP2');
+            item.setAttribute('data-mapping', 'specific');
+            item.setAttribute('data-term', '{{ page.lng_pair }}');
+            item.setAttribute('data-strict', '1');
+            item.setAttribute('data-reactions-enabled', '1');
+            item.setAttribute('data-emit-metadata', '0');
+            item.setAttribute('data-input-position', 'top');
+            item.setAttribute('data-theme', getTheme());
+            item.setAttribute('data-lang', getLang());
+            item.setAttribute('data-loading', 'lazy');
+            item.setAttribute('crossorigin', 'anonymous');
+            item.setAttribute('async','');
+
+            let giscussRoot = document.getElementById("giscuss-script");
+            giscussRoot.appendChild(item);
+        });
+    }
+</script>
+
+<div id="giscuss-script"></div>
