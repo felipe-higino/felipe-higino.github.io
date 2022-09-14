@@ -6,8 +6,9 @@
 .footer-container {
   position: fixed;
   box-shadow: initial;
+  margin: 0 auto;
   width: calc(100% - var(--side-nav-width));
-  max-width: var(--main-container-max-width);
+  // max-width: var(--main-container-max-width);
   left: var(--side-nav-width);
 }
 
