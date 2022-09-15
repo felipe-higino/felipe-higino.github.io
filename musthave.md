@@ -55,8 +55,8 @@ TODO
 [x] theme-reactive utterances
 [x] language-agnostic utterances comment session
 
-[] blog colors
-[] mudar fontes
+[x] blog colors
+[x] mudar fontes
 
 bugfixes
 [] tradução dos meses
