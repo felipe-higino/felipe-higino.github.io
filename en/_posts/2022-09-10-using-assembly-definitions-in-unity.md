@@ -10,10 +10,10 @@ date: 2022-09-10 00:24:44 +0000
 [next article]:https://google.com
 [asmdef Unity documentation]:https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html
 [Unity Test Framework]:https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/edit-mode-vs-play-mode-tests.html
+[solid wikipedia en]:https://en.wikipedia.org/wiki/SOLID
 
 Why you should use `Assembly Definitions` in your next Unity project? And why you shouldn't? 
-
-For the ones who don't have enough time to read (sadly 🙁), here is the key answers:
+For the ones who don't have enough time to read (sadly 🙁), here are the key answers:
 
 ## TL;DR
 
@@ -29,94 +29,98 @@ For the ones who don't have enough time to read (sadly 🙁), here is the key an
     - can cause merge conflicts
     - not undestanding how dll dependencies works
 
-## O que é .dll
+## What is a .dll
 
-`.dll` (dynamic link libraries) são arquivos que contém referências para o código do programa em questão.
+`.dll` (dynamic link libraries) are files that contains code references for your application.
 
-Na Unity, a **principal dll** chama-se `Assembly-Csharp.dll`. Por padrão, os scripts criados pelo usuário pertencem a essa `.dll`, como é possível observar no inspector de qualquer script criado da maneira tradicional:
+In Unity , **the main dll** is called `Assembly-Csharp.dll`. By default, the user-created scripts remains in this `.dll`, as you can see in any script inspector:
 
 ![Unity Assembly-Csharp](:id_asmdefs1/assembly-csharp.drawio.png)
 
-## O que é .asmdef
+## What is an .asmdef
 
-A Unity permite que o usuário crie suas próprias `.dll`s e isole seus códigos do restante da aplicação. Para isso, é necessário que o usuário crie um asset `.asmdef`.
+Unity allows the user to create their own `.dll`s, isolating the code from the rest. For this, the user needs to create an `.asmdef` asset.
 
-Assets `.asmdef` notificam a Unity que todos os scripts da pasta (e subpastas) em que ele está contido devem ser compiladas em uma `.dll` separada.
+UnityEngine is notified by the `.asmdef` that all scripts in the folder (and subfolders) it is contained in must be compiled into a separate `.dll`.
 
-Esses assets podem ser criados pelo editor, clicando com o botão direito na pasta desejada e selecionando *Create/Assembly Definition*:
+These assets can be created through the editor, by right-clicking on the desired folder and selecting *Create/Assembly Definition*:
 
 ![create assembly definition](:id_asmdefs1/create-asmdef.gif)
 
-> Note como o inspector muda o Filename de `Assembly-Csharp.dll` para `Custom.dll`
+> Notice how the inspector changes the Filename from `Assembly-Csharp.dll` to `Custom.dll`.
 
-## E qual é a vantagem disso?
+## Ok so, what is the point?
 
-Criar código para jogos é uma tarefa complexa. 😲
+Creating code for games is a complex task. 😲
 
-E fica cada vez mais complexa com as constantes adições de códigos, refatorações e remoções de *features*.
+And it gets more and more complex with the constant additions, refactorings and *features* removals.
 
-### Vantagem 1: Dividir e Conquistar
+### Advantage 1: Divide and Conquer
 
-Dividir o projeto em pequenas partes (no caso, em pequenas `.dll`s) ajuda a diminuir a complexidade dessa tarefa, ao passo que permite melhorar o gerenciamento de dependências e a divisão de responsabilidades – *o que certamente está bastante alinhado com os princípios SOLID*.
+Dividing the project into small parts (in this case, into small `.dll`s) helps to reduce the complexity of game development, cultivating concepts like *dependency management* and *division of responsibilities* - *which is certainly very much in line with the [SOLID][solid wikipedia en] principles*.
 
-Quando um `.asmdef` é criado, o código é isolado de todo o restante da aplicação. 
+When an `.asmdef` is created, the code is isolated from the rest of the application.
 
-Para utilizar lógicas externas (e criar uma dependência), basta referenciar outro `.asmdef` através da janela:
+If you want using external logic (and create a dependency), just reference another `.asmdef` through the inspector:
 
 ![Dependency *assembly definitions*](:id_asmdefs1/dependencies-asmdef.gif)
 
-Visualmente, esse é o antes e depois do *grafo de dependências* entre as `.dll`s:
+Visually, this is the before and after of `.dll`s's *dependency graph*:
 
 ![Dependency graph *assembly definitions*](:id_asmdefs1/dependency-graph.drawio.png)
 
-É possível remover a dependência do `Assembly-Csharp.dll`, e também referenciar `.dll`s pré-compiladas. Esses tópicos serão abordados no próximo artigo [Entendendo o inspector dos .asmdefs][next article]
+It is possible to remove the dependency on `Assembly-Csharp.dll`, and also reference precompiled `.dll`s. These topics will be covered in the next article [Understanding the .asmdefs inspector][next article]
 
-### Vantagem 2: Reduzir o tempo de compilação
+### Advantage 2: Reducing compile times
 
-Sabe aquela sensação que o projeto da Unity começa a ficar lento com o tempo? 
+You know that feeling when Unity becomes more and more slow as the time passes, and you keep adding features?
 
-Pois é, muito provavelmente é porque que toda a base de código está centralizada na `Assembly-Csharp.dll` – e a cada mudança, **TODOS OS SCRIPTS** são recompilados.
+Yeah, most likely it's because your entire codebase is centered on `Assembly-Csharp.dll` – the effect of this is: on every change, **ALL YOUR SCRIPTS** will be recompiled.
 
-Com `.dll`s menores, a situação muda. Imagine a seguinte situação:
+With smaller `.dll`s, the situation changes. Imagine the following situation:
 
 ``` txt
 📁Assets
-    📁minhaPasta1
-        // vários scripts aqui
-        🔹minhaDll1.asmdef
-    📁minhaPasta2
-        // vários scripts aqui
-        🔹minhaDll2.asmdef
-    📁minhaPasta3
-        // vários scripts aqui
-        🔹minhaDll3.asmdef
+    📁myFolder1
+        // imagine many scripts here
+        🔹myDll1.asmdef
+    📁myFolder2
+        // imagine many scripts here
+        🔹myDll2.asmdef
+    📁myFolder3
+        // imagine many scripts here
+        🔹myDll3.asmdef
 ```
 
 
-Caso algum script da pasta ***"minhaPasta1"*** seja modificado, apenas a dll ``minhaDll1.dll`` será recompilada, enquanto ``minhaDll2.dll`` e ``minhaDll3.dll`` permanecerão intactas.
+If any script inside ***"myFolder1"*** is modified, only the dll ``myDll1.dll`` will be recompiled, while ``myDll2.dll`` and ``myDll3.dll`` will remain intact.
 
-Com isso, poupa-se o tempo de recompilar vários scripts desnecessariamente.
+This saves you the time of unnecessarily recompiling multiple scripts.
 
-## O que são .asmrefs
+## What are .asmrefs
 
-Colocar todos os scripts dentro de uma pasta pode dificultar a organização do seu projeto. 
+Placing all your scripts inside just one folder will complicate your project organization.
 
-Para resolver esse problema, existem os assets `.asmref` (***Assembly Definition References***), onde é possível incluir qualquer pasta do projeto na `.dll` desejada.
+To solve this problem, there are helper assets, called `.asmref` (***Assembly Definition References***), where you can include any folder in any desired `.dll`.
 
-Para criar `.asmref`s, basta selecionar *Create/Assembly Definition Reference* e referenciar o `.asmdef` desejado:
+To create `.asmref`s, simply select *Create/Assembly Definition Reference* and reference the desired `.asmdef`:
 
 ![How to create Assembly References](:id_asmdefs1/asmref.gif)
 
-> Aqui, qualquer script na pasta ***MyFolder3*** será compilado na `.dll` `Custom2.dll`
+> Here, any script inside ***MyFolder3*** folder will be compiled into the `.dll` `Custom2.dll`
 
-## Conclusão
+Pay attention to the difference:
+- `.asmdef` = definition
+- `.asmref` = reference
 
-*Assembly Definitions* e Assembly Definition References são um excelente recurso para produtividade e organização de código. 
+## Conclusion
 
-Várias features desse sistema não foram abordadas neste artigo. Por esse motivo, seguem alguns links úteis para quem queira entender mais sobre o assunto:
+*Assembly Definitions* and *Assembly Definition References* are a great resource for productivity and code organization.
 
-Para ter uma visão completa sobre o sistema, acesse a documentação oficial da Unity sobre *Assembly Definitions* [neste link][asmdef Unity documentation]
+Several features from this system were not covered in this article. For this reason, here are some useful links for those who want dive into a more deep  understanding about this subject:
 
-Para entender como *Assembly Definitions* são integrados com testes unitários, acesse a documentação do *Test Framework* [neste link][Unity Test Framework]
+For a complete overview of the system, access Unity's official *Assembly Definitions* documentation in [this link][asmdef Unity documentation]
 
-Acesse o próximo artigo – [Entendendo o inspector dos .asmdefs][next article] para conhecer mais sobre outras funcionalidades interessantes dos `.asmdef`s.
+To understand how *Assembly Definitions* are integrated with unit tests, visit the *Test Framework* documentation in [this link][Unity Test Framework]
+
+Go to the next article – [Understanding the .asmdefs inspector][next article] to learn more about other interesting `.asmdef`s's features.

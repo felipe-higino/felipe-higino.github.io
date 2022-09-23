@@ -10,11 +10,15 @@ date: 2022-09-10 00:24:44 +0000
 [next article]:https://google.com
 [asmdef Unity documentation]:https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html
 [Unity Test Framework]:https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/edit-mode-vs-play-mode-tests.html
+[solid wikipedia ptbr]:https://pt.wikipedia.org/wiki/SOLID
+
+Por que você deveria usar `Assembly Definitions` no seu próximo projeto feito com Unity? E por que você não deveria?
+Para aqueles sem tempo de ler (infelizmente 🙁), aqui vai um breve resumo:
 
 ## TL;DR
 
 ### Por quê devo usar *assembly definitions*?
-- aumenta a granularidade nas features
+- garante a granularidade nas features
 - melhor gerenciamento de dependências (melhor arquitetura de código)
 - melhor testabilidade (integração com testes unitários)
 - reduz o tempo de compilação (diminui exponencialmente os tempos de iteração)
@@ -41,9 +45,9 @@ Assets `.asmdef` notificam a Unity que todos os scripts da pasta (e subpastas) e
 
 Esses assets podem ser criados pelo editor, clicando com o botão direito na pasta desejada e selecionando *Create/Assembly Definition*:
 
-![create assembly definition](:id_asmdefs1/create-asmdef.gif)
+![Criando assembly definition](:id_asmdefs1/create-asmdef.gif)
 
-> Note como o inspector muda o Filename de `Assembly-Csharp.dll` para `Custom.dll`
+> Note como o inspector muda o Filename de `Assembly-Csharp.dll` para `Custom.dll`.
 
 ## E qual é a vantagem disso?
 
@@ -53,17 +57,17 @@ E fica cada vez mais complexa com as constantes adições de códigos, refatora�
 
 ### Vantagem 1: Dividir e Conquistar
 
-Dividir o projeto em pequenas partes (no caso, em pequenas `.dll`s) ajuda a diminuir a complexidade dessa tarefa, ao passo que permite melhorar o gerenciamento de dependências e a divisão de responsabilidades – *o que certamente está bastante alinhado com os princípios SOLID*.
+Dividir o projeto em pequenas partes (no caso, em pequenas `.dll`s) ajuda a diminuir a complexidade dessa tarefa, ao passo que permite melhorar o *gerenciamento de dependências* e a *divisão de responsabilidades* – *o que certamente está bastante alinhado com os princípios [SOLID][solid wikipedia ptbr]*.
 
 Quando um `.asmdef` é criado, o código é isolado de todo o restante da aplicação. 
 
 Para utilizar lógicas externas (e criar uma dependência), basta referenciar outro `.asmdef` através da janela:
 
-![Dependency *assembly definitions*](:id_asmdefs1/dependencies-asmdef.gif)
+![Dependência entre *assembly definitions*](:id_asmdefs1/dependencies-asmdef.gif)
 
 Visualmente, esse é o antes e depois do *grafo de dependências* entre as `.dll`s:
 
-![Dependency graph *assembly definitions*](:id_asmdefs1/dependency-graph.drawio.png)
+![Grafo de dependências entre *assembly definitions*](:id_asmdefs1/dependency-graph.drawio.png)
 
 É possível remover a dependência do `Assembly-Csharp.dll`, e também referenciar `.dll`s pré-compiladas. Esses tópicos serão abordados no próximo artigo [Entendendo o inspector dos .asmdefs][next article]
 
@@ -101,13 +105,17 @@ Para resolver esse problema, existem os assets `.asmref` (***Assembly Definition
 
 Para criar `.asmref`s, basta selecionar *Create/Assembly Definition Reference* e referenciar o `.asmdef` desejado:
 
-![How to create Assembly References](:id_asmdefs1/asmref.gif)
+![Como criar Assembly References](:id_asmdefs1/asmref.gif)
 
 > Aqui, qualquer script na pasta ***MyFolder3*** será compilado na `.dll` `Custom2.dll`
 
+Preste atenção na diferença:
+- `.asmdef` = definição
+- `.asmref` = referência
+
 ## Conclusão
 
-*Assembly Definitions* e Assembly Definition References são um excelente recurso para produtividade e organização de código. 
+*Assembly Definitions* e *Assembly Definition References* são um excelente recurso para produtividade e organização de código. 
 
 Várias features desse sistema não foram abordadas neste artigo. Por esse motivo, seguem alguns links úteis para quem queira entender mais sobre o assunto:
 
